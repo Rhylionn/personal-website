@@ -1,7 +1,7 @@
 <template>
   <footer class="w-11/12 sm:w-1/2 xl:w-1/3   m-auto flex justify-between items-center">
     <div>
-      <a href=""><fa icon="code-merge" size="lg"/><span class="ml-2">{{versionNumber}}</span></a>
+      <a href="https://github.com/Rhylionn/personal-website/releases"><fa icon="code-merge" size="lg"/><span class="ml-2">{{versionNumber}}</span></a>
     </div>
     <Lang />
     <p>

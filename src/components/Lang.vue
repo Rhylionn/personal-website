@@ -19,7 +19,6 @@ export default {
   created(){
     this.language = navigator.language.split('-')[0]
     this.$i18n.locale = this.language
-    console.log(this.language)
   }
 }
 </script>

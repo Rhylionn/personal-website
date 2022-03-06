@@ -5,7 +5,7 @@
       <h1 class="font-black text-5xl text-center sm:text-left">{{ $t('header.title') }} <fa icon="mug-hot" size="xs" class="ml-4"/></h1>
       <p class="mt-12 text-lg text-center sm:text-left">{{ $t('header.aboutme') }}</p>
       <div class="my-8 flex justify-center sm:justify-start">
-        <a class="bg-slate-900 py-3 px-4 rounded-md font-bold" href="static/resume.pdf" target="_blank">{{ $t('header.dl-resume') }}</a>
+        <a class="bg-slate-900 py-3 px-4 rounded-md font-bold" :href="getResume" target="_blank">{{ $t('header.dl-resume') }}</a>
       </div>
       <div class="flex justify-center gap-4 sm:justify-start">
         <a href="https://github.com/Rhylionn" target="_blank"><img class="h-8" src="../assets/images/github-icon.svg"/></a> 
@@ -72,6 +72,11 @@ export default {
       ]
     }
   },
+  computed:{
+    getResume(){
+      return this.$i18n.locale === 'en' ? 'static/cv-en.pdf' : 'static/cv-fr.pdf'
+    }
+  },
   created(){
     this.educations = [
       {
@@ -87,12 +92,11 @@ export default {
     this.projects = [
       {
         id: 0,
-        ghLink: 'https://github.com/Rhylionn',
+        ghLink: 'https://github.com/Rhylionn/Citadelles',
         technologies: ['java']
       },
       {
         id: 1,
-        ghLink: 'https://github.com/Rhylionn',
         technologies: ['python']
       },
       {
@@ -101,10 +105,11 @@ export default {
       },
       {
         id: 3,
+        ghLink: 'https://github.com/Rhylionn/personal-website',
         technologies: ['html5', 'css3', 'vuejs']
       }
     ]
-  },
+  }
 }
 </script>
 
