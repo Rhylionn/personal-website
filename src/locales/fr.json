@@ -1,4 +1,10 @@
 {
+  "metas": {
+    "title": "Thomas BERNARD - Etudiant ingénieur en cybersécurité",
+    "description": "Thomas, étudiant ingénieur dans le domaine de la sécurité informatique.",
+    "keywords": "Cybersécurité, étudiant, esiap, ingénieur, informatique",
+    "author": "Thomas BERNARD"
+  },
   "navigation":{
     "home": "Accueil",
     "contact": "Contact"
@@ -13,15 +19,15 @@
     "projects": [
       {
         "name": "Citadelles",
-        "description": "Projet crée dans le cadre d'un cours, le but était de créer le jeu de plateau Citadelles en Java en réalisant différents tests."
+        "description": "Projet créé dans le cadre d'un cours, le but était de créer le jeu de plateau Citadelles en Java en réalisant différents tests."
       },
       {
         "name": "Bots automatisation web",
-        "description": "Réalisation de deux bots à des fins d'automatisations de tâches répétitives à l'aide de librairie Python Selenium."
+        "description": "Réalisation de deux bots à des fins d'automatisations de tâches répétitives à l'aide de la librairie Python Selenium."
       },
       {
         "name": "Navigate security",
-        "description": "Duo extension web/site internet permettant aux utilisateurs de signaler des sites frauduleux et d'obtenir un score sur la séucité du site visité."
+        "description": "Duo extension web/site internet permettant aux utilisateurs de signaler des sites frauduleux et d'obtenir un score sur la sécurité du site visité."
       },
       {
         "name": "Site personnel",

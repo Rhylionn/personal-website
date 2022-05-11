@@ -1,4 +1,10 @@
 {
+  "metas": {
+    "title": "Thomas Bernard - Engineering student in cybersecurity",
+    "description": "Thomas, engineering student in the cybersecurity field",
+    "keywords": "Cybersecurity, student, esaip, engineer, computer science",
+    "author": "Thomas Bernard"
+  },
   "navigation":{
     "home": "Home",
     "contact": "Contact"
