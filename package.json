@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.41"
+    "@vueuse/head": "^0.9.8",
+    "vue": "^3.2.41",
+    "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
     "@vitejs/plugin-vue": "^3.2.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.26.0",
