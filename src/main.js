@@ -56,7 +56,7 @@ library.add(
 )
 
 const i18n = createI18n({
-  locale: import.meta.env.VITE_APP_I18N_LOCALE,
+  locale: navigator.language.split("-")[0],
   fallbackLocale: import.meta.env.VITE_APP_I18N_FALLBACK_LOCALE,
   messages,
 })
