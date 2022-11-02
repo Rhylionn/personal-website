@@ -1,0 +1,26 @@
+{
+  "metas": {
+    "title": "Thomas Bernard - Engineering student in cybersecurity",
+    "description": "Thomas, engineering student in the cybersecurity field",
+    "keywords": "Cybersecurity, student, esaip, engineer, computer science",
+    "author": "Thomas Bernard"
+  },
+  "navigation": {
+    "home": "Home",
+    "contact": "Contact"
+  },
+  "header": {
+    "title": "Hi! Thomas's here!",
+    "aboutme": "French student in engineering school in the cybersecurity field, I am a fervent defender of online privacy aiming for a more secure and private online world.",
+    "dl-resume": "Download my resume"
+  },
+  "myWork": {
+    "heading": "My work"
+  },
+  "education": {
+    "heading": "Education"
+  },
+  "footer": {
+    "technology": "Made with"
+  }
+}
