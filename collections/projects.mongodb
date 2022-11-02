@@ -1,0 +1,52 @@
+db.projects.insertMany([
+  {
+    technologies: ["java"],
+    repoLink: "https://github.com/Rhylionn/Citadelles",
+    creation_date: new ISODate("2021-08-29T00:00+01:00"),
+    en: {
+      title: "Citadelles",
+      description: "This project was created for a school project, the idas was to create the Citadelles board game in Java and to perform testing."
+    },
+    fr: {
+      title: "Citadelles",
+      description: "Projet créé dans le cadre d'un cours, le but était de créer le jeu de plateau Citadelles en Java en réalisant différents tests."
+    }
+  },
+  {
+    technologies: ["python"],
+    creation_date: new ISODate("2019-01-01T00:00+01:00"),
+    en: {
+      title: "Web bots automation",
+      description: "Creation of two Python bots with the selenium library in order to automate recurring tasks."
+    },
+    fr: {
+      title: "Bots automatisation web",
+      description: "Réalisation de deux bots à des fins d'automatisations de tâches répétitives à l'aide de la librairie Python Selenium."
+    }
+  },
+  {
+    technologies: ["php", "html5", "css3", "js-square"],
+    creation_date: new ISODate("2020-01-01T00:00+01:00"),
+    en: {
+      title: "Navigate security",
+      description: "Website and browser extension conception allowing users to report malicious websites and giving a safety score when visiting"
+    },
+    fr: {
+      title: "Navigate security",
+      description: "Duo extension web/site internet permettant aux utilisateurs de signaler des sites frauduleux et d'obtenir un score sur la sécurité du site visité."
+    }
+  },
+  {
+    technologies: ["html5", "css3", "vuejs"],
+    repoLink: "https://github.com/Rhylionn/personal-website",
+    creation_date: new ISODate("2022-01-01T00:00+01:00"),
+    en: {
+      title: "Personnal website",
+      description: "Personnal website made with VueJS and TailwindCSS presenting myself, my skills, my projects and my education aswell"
+    },
+    fr: {
+      title: "Site personnel",
+      description: "Création de mon site personnel en VueJS et TailwindCSS ma présentant ainsi que mes compétences, mes projets et mes formations."
+    }
+  }
+])

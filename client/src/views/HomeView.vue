@@ -51,6 +51,7 @@
             v-for="(project, index) in projects"
             :key="index"
             :project="project"
+            :lang="$i18n.locale"
           />
         </div>
       </section>
@@ -64,7 +65,8 @@
           <EducationOverview
             v-for="(education, index) in educations"
             :key="index"
-            :school="education"
+            :education="education"
+            :lang="$i18n.locale"
           />
         </div>
       </section>
@@ -97,7 +99,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue"
+import { ref, onBeforeMount } from "vue"
 
 import FooterInformations from "../components/FooterInformations.vue"
 import ProjectOverview from "../components/ProjectOverview.vue"
@@ -114,43 +116,33 @@ export default {
   },
   setup() {
     const educations = ref([])
+
+    // Fetch educations
+    async function fetchEducations() {
+      const educationEndpoint = "/educations/latest"
+      const educationUrl = `${import.meta.env.VITE_API_URL}${educationEndpoint}`
+
+      const educationResponse = await fetch(educationUrl)
+      educations.value = await educationResponse.json()
+    }
+
     const projects = ref([])
 
-    // Resume
+    // Fetch projects
+    async function fetchProjects() {
+      const projectEndpoint = "/projects/latest"
+      const projectUrl = `${import.meta.env.VITE_API_URL}${projectEndpoint}`
 
-    onMounted(() => {
-      educations.value = [
-        {
-          id: 0,
-          img: "esaip-logo.svg",
-        },
-        {
-          id: 1,
-          img: "via-logo.svg",
-        },
-      ]
+      const projectResponse = await fetch(projectUrl)
+      projects.value = await projectResponse.json()
+    }
 
-      projects.value = [
-        {
-          id: 0,
-          ghLink: "https://github.com/Rhylionn/Citadelles",
-          technologies: ["java"],
-        },
-        {
-          id: 1,
-          technologies: ["python"],
-        },
-        {
-          id: 2,
-          technologies: ["php", "html5", "css3", "js-square"],
-        },
-        {
-          id: 3,
-          ghLink: "https://github.com/Rhylionn/personal-website",
-          technologies: ["html5", "css3", "vuejs"],
-        },
-      ]
+    onBeforeMount(async () => {
+      await fetchEducations()
+      await fetchProjects()
     })
+
+    // Resume
 
     return { educations, projects }
   },

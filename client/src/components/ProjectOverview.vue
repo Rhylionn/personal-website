@@ -5,12 +5,12 @@
     >
       <div class="w-3/4">
         <h3 class="font-bold mb-1">
-          {{ $t(`myWork.projects[${project.id}].name`) }}
+          {{ displayedProject.title }}
         </h3>
-        <p>{{ $t(`myWork.projects[${project.id}].description`) }}</p>
+        <p>{{ displayedProject.description }}</p>
       </div>
       <div class="w-1/4 flex justify-end items-center">
-        <a v-if="project.ghLink !== undefined" :href="project.ghLink"
+        <a v-if="project.repoLink !== undefined" :href="project.repoLink"
           ><FontAwesomeIcon :icon="['fab', 'github']" size="xl"
         /></a>
       </div>
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { watch, ref } from "vue"
+
 export default {
   name: "ProjectOverview",
   props: {
@@ -39,6 +41,27 @@ export default {
         return {}
       },
     },
+    lang: {
+      type: String,
+      default() {
+        return "en"
+      },
+    },
+  },
+  setup(props) {
+    const displayedProject = ref(
+      props.lang === "en" ? props.project.en : props.project.fr
+    )
+
+    watch(
+      () => props.lang,
+      () => {
+        displayedProject.value =
+          props.lang === "en" ? props.project.en : props.project.fr
+      }
+    )
+
+    return { displayedProject }
   },
 }
 </script>
