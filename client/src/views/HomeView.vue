@@ -14,6 +14,7 @@
             class="bg-slate-900 py-3 px-4 rounded-md font-bold"
             :href="getResume"
             target="_blank"
+            rel="nofollow"
             >{{ $t("header.dl-resume") }}</a
           >
         </div>
@@ -99,7 +100,7 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
+import { ref, onBeforeMount, computed } from "vue"
 
 import FooterInformations from "../components/FooterInformations.vue"
 import ProjectOverview from "../components/ProjectOverview.vue"
@@ -142,9 +143,11 @@ export default {
       await fetchProjects()
     })
 
-    // Resume
+    const getResume = computed(() => {
+      return new URL("../assets/cv-fr.pdf", import.meta.url).href
+    })
 
-    return { educations, projects }
+    return { educations, projects, getResume }
   },
 }
 </script>
