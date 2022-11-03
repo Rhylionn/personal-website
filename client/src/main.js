@@ -2,6 +2,7 @@ import { createApp } from "vue"
 import "./index.css"
 import router from "./router/index"
 import { createHead } from "@vueuse/head"
+import { createPinia } from "pinia"
 
 import App from "./App.vue"
 
@@ -66,6 +67,7 @@ const i18n = createI18n({
 })
 
 const head = createHead()
+const pinia = createPinia()
 
 const app = createApp(App)
 
@@ -73,5 +75,6 @@ app.component("FontAwesomeIcon", FontAwesomeIcon)
 
 app.use(router)
 app.use(head)
+app.use(pinia)
 app.use(i18n)
 app.mount("#app")

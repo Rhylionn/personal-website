@@ -102,6 +102,8 @@
 <script>
 import { ref, onBeforeMount, computed } from "vue"
 
+import { useProjectStore } from "../stores/projects"
+
 import FooterInformations from "../components/FooterInformations.vue"
 import ProjectOverview from "../components/ProjectOverview.vue"
 import EducationOverview from "../components/EducationOverview.vue"
@@ -118,6 +120,8 @@ export default {
   setup() {
     const educations = ref([])
 
+    const projectStore = useProjectStore()
+
     // Fetch educations
     async function fetchEducations() {
       const educationEndpoint = "/educations/latest"
@@ -128,8 +132,8 @@ export default {
     }
 
     const projects = ref([])
-
     // Fetch projects
+    /*
     async function fetchProjects() {
       const projectEndpoint = "/projects/latest"
       const projectUrl = `${import.meta.env.VITE_API_URL}${projectEndpoint}`
@@ -137,11 +141,11 @@ export default {
       const projectResponse = await fetch(projectUrl)
       projects.value = await projectResponse.json()
     }
+    */
 
     onBeforeMount(async () => {
       await fetchEducations()
-      await fetchProjects()
-      console.log("Home calling api")
+      projects.value = projectStore.getProjects
     })
 
     const getResume = computed(() => {

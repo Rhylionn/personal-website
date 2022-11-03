@@ -42,6 +42,8 @@ import { useI18n } from "vue-i18n"
 import ExperienceOverview from "../components/ExperienceOverview.vue"
 import FooterInformations from "../components/FooterInformations.vue"
 
+import { useProjectStore } from "../stores/projects"
+
 export default {
   name: "ExperiencesView",
   components: {
@@ -52,6 +54,9 @@ export default {
     const { t } = useI18n({
       inheritLocale: true,
     })
+
+    const projectStore = useProjectStore()
+    console.log(projectStore.getProjects)
 
     const profesionalExperiences = ref([])
     const voluntaryExperiences = ref([])

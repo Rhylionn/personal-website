@@ -5,7 +5,10 @@
 
 <script>
 import { useHead } from "@vueuse/head"
+import { onBeforeMount } from "vue"
 import NavBar from "./components/NavBar.vue"
+
+import { useProjectStore } from "./stores/projects"
 export default {
   components: {
     NavBar,
@@ -27,6 +30,13 @@ export default {
           content: "Thomas BERNARD",
         },
       ],
+    })
+
+    // Call api
+    const projectStore = useProjectStore()
+
+    onBeforeMount(() => {
+      projectStore.fetchProjects()
     })
   },
 }
