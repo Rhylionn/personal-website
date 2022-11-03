@@ -16,6 +16,8 @@ import {
   faRoute,
   faLanguage,
   faCodeMerge,
+  faUserTie,
+  faHandshakeAngle,
 } from "@fortawesome/free-solid-svg-icons"
 
 import {
@@ -40,6 +42,8 @@ library.add(
   faRoute,
   faLanguage,
   faCodeMerge,
+  faUserTie,
+  faHandshakeAngle,
   faGithub,
   faBuffer,
   faFedora,

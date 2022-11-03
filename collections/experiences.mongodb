@@ -1,0 +1,76 @@
+db.experiences.insertMany([
+  {
+    voluntary: false,
+    name: "Crédit Agricole",
+    date: new ISODate("2021-06-01T00:00+01:00"),
+    duration: 1,
+    en: {
+      subject: "Intern in cybersecurity",
+      description: "I did a one month internship in the cybersecurity team at Crédit Agricole Pyrénées Gascogne. An experience that allowed me to familiarise myself with the professional world.",
+      tasks: [
+        "Discovery of the IT security challanges in the financial sector",
+        "Realization of a proof of concept about a mobile fleet defense solution",
+        "Realization of a phishing campaign"
+      ]
+    },
+    fr: {
+      subject: "Stagiaire en sécurité informatique",
+      description: "Réalisation d’un stage de un mois au sein de l’équipe cybersécurité au Crédit Agricole Pyrénées Gascogne. Une experience qui m’a permis de me familiariser avec le monde profesionnel.",
+      tasks: [
+        "Découverte des enjeux de la sécurité informatique du domaine financier",
+        "Réalisation d'une preuve de concept sur une solution de défense de la flotte mobile",
+        "Réalisation d'une campagne de Phishing"
+      ]
+    }
+  },
+  {
+    voluntary: false,
+    name: "Alpes Contrôles",
+    date: new ISODate("2022-07-01T00:00+01:00"),
+    duration: 1,
+    en: {
+      subject: "Infrastructure and network trainee",
+      description: "One month internship in Annecy at the headquarters of Alpes Contrôles. The heart of the matter, the infrastructure. This allowed me to work independently on new data protection technologies as well as to perform penetration tests and provide an audit report.",
+      tasks: [
+        "Used Veeam Backup & Replication",
+        "Windows Server Migration",
+        "Performed penetration tests / load tests",
+        "Virtualisation / containerisation"
+      ]
+    },
+    fr: {
+      subject: "Stagiaire infrastructure et réseaux",
+      description: "Stage d’un mois à Annecy dans au siège d’Alpes Contrôles. Le coeur du sujet, l’infrastrucutre. Cela m’a permis de travailler en autonomie sur de nouvelles technologies de sauvegades de données ainsi que de pratiquer des tests d’intrusion et fournir un rapport d’audit.",
+      tasks: [
+        "Utilisation de Veeam Backup & Replication",
+        "Migration Windows Server",
+        "Réalisation de tests d’intrusions / tests de charge",
+        "Virtualisation / Conteneurisation"
+      ]
+    }
+  },
+  {
+    voluntary: true,
+    name: "WEIS",
+    date: new ISODate("2021-07-01T00:00+01:00"),
+    duration: 9,
+    en: {
+      subject: "Vice-presidency",
+      description: "Vice-presidency of WEIS, a club for international students at ESAIP. Mutual aid and organisation are essential and have enabled me to discover many cultures and to develop my managerial skills.",
+      tasks: [
+        "Integration of international students",
+        "Creation and implementation of events",
+        "Team management"
+      ]
+    },
+    fr: {
+      subject: "Vice-président",
+      description: "Vice-présidence du WEIS, club s’occupant du bon déroulement des étudiants internationaux de l’ESAIP. L’entraide et l’organisation sont de mises et m’ont permis de découvrir de nombreuses cultures et de développer mes compétences managériales.",
+      tasks: [
+        "Intégration des étudiants internationaux",
+        "Création et mise en place d'évènements",
+        "Gestion d'équipe"
+      ]
+    }
+  }
+])

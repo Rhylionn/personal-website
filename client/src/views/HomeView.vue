@@ -141,6 +141,7 @@ export default {
     onBeforeMount(async () => {
       await fetchEducations()
       await fetchProjects()
+      console.log("Home calling api")
     })
 
     const getResume = computed(() => {

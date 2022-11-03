@@ -7,7 +7,8 @@
   },
   "navigation": {
     "home": "Home",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experiences": "Experiences"
   },
   "header": {
     "title": "Hi! Thomas's here!",
@@ -22,5 +23,21 @@
   },
   "footer": {
     "technology": "Made with"
+  },
+  "profesional": {
+    "heading": "Profesional experiences",
+    "date": "months",
+    "tasksMade": "Tasks given"
+  },
+  "voluntary": {
+    "heading": "Voluntary experiences",
+    "title": "WEIS - International Student Host Club",
+    "position": "Vice President",
+    "description": "Vice-presidency of WEIS, a club for international students at ESAIP. Mutual aid and organisation are essential and have enabled me to discover many cultures and to develop my managerial skills.",
+    "tasks": [
+      "Integration of international students",
+      "Creation and implementation of events",
+      "Team management"
+    ]
   }
 }

@@ -7,7 +7,8 @@
   },
   "navigation": {
     "home": "Accueil",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experiences": "Experiences"
   },
   "header": {
     "title": "Salut! Moi c'est Thomas",
@@ -22,5 +23,21 @@
   },
   "footer": {
     "technology": "Fait avec"
+  },
+  "profesional": {
+    "heading": "Experienecs profesionnelles",
+    "date": "mois",
+    "tasksMade": "Taches réalisées"
+  },
+  "voluntary": {
+    "heading": "Experiences volontaires",
+    "title": "WEIS - Club d’accueil des étudiants internationaux",
+    "position": "Vice-président",
+    "description": "Vice-présidence du WEIS, club s’occupant du bon déroulement des étudiants internationaux de l’ESAIP. L’entraide et l’organisation sont de mises et m’ont permis de découvrir de nombreuses cultures et de développer mes compétences managériales.",
+    "tasks": [
+      "Intégration des étudiants internationaux",
+      "Création et mise en place d'évènements",
+      "Gestion d'équipe"
+    ]
   }
 }

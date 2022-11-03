@@ -13,6 +13,7 @@ app.use(cors())
 
 app.use("/educations", require("./routes/educations"))
 app.use("/projects", require("./routes/projects"))
+app.use("/experiences", require("./routes/experiences"))
 
 app.listen(5000, () => {
   console.log("Listening on port 5000")
