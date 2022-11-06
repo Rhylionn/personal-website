@@ -41,36 +41,40 @@
           /></a>
         </div>
       </header>
-      <section id="myWork">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
-          <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />{{
-            $t("myWork.heading")
-          }}
-        </h2>
-        <div class="flex flex-col">
-          <ProjectOverview
-            v-for="(project, index) in projects"
-            :key="index"
-            :project="project"
-            :lang="$i18n.locale"
-          />
-        </div>
+      <WaitingLoader v-if="projects.length == 0" />
+      <section v-else>
+        <section id="myWork">
+          <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+            <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />{{
+              $t("myWork.heading")
+            }}
+          </h2>
+          <div class="flex flex-col">
+            <ProjectOverview
+              v-for="(project, index) in projects"
+              :key="index"
+              :project="project"
+              :lang="$i18n.locale"
+            />
+          </div>
+        </section>
+        <section id="education">
+          <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+            <FontAwesomeIcon icon="route" size="xs" class="mr-4" />{{
+              $t("education.heading")
+            }}
+          </h2>
+          <div>
+            <EducationOverview
+              v-for="(education, index) in educations"
+              :key="index"
+              :education="education"
+              :lang="$i18n.locale"
+            />
+          </div>
+        </section>
       </section>
-      <section id="education">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
-          <FontAwesomeIcon icon="route" size="xs" class="mr-4" />{{
-            $t("education.heading")
-          }}
-        </h2>
-        <div>
-          <EducationOverview
-            v-for="(education, index) in educations"
-            :key="index"
-            :education="education"
-            :lang="$i18n.locale"
-          />
-        </div>
-      </section>
+
       <section id="technologies">
         <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
           <FontAwesomeIcon
@@ -100,14 +104,17 @@
 </template>
 
 <script>
-import { ref, onBeforeMount, computed } from "vue"
+import { computed } from "vue"
 
 import { useProjectStore } from "../stores/projects"
+import { useEducationStore } from "../stores/educations"
 
 import FooterInformations from "../components/FooterInformations.vue"
 import ProjectOverview from "../components/ProjectOverview.vue"
 import EducationOverview from "../components/EducationOverview.vue"
 import TechnologyUsed from "../components/TechnologyUsed.vue"
+
+import WaitingLoader from "../components/WaitingLoader.vue"
 
 export default {
   name: "HomeView",
@@ -116,36 +123,18 @@ export default {
     ProjectOverview,
     EducationOverview,
     TechnologyUsed,
+    WaitingLoader,
   },
   setup() {
-    const educations = ref([])
-
     const projectStore = useProjectStore()
+    const educationStore = useEducationStore()
 
-    // Fetch educations
-    async function fetchEducations() {
-      const educationEndpoint = "/educations/latest"
-      const educationUrl = `${import.meta.env.VITE_API_URL}${educationEndpoint}`
+    const projects = computed(() => {
+      return projectStore.getProjects
+    })
 
-      const educationResponse = await fetch(educationUrl)
-      educations.value = await educationResponse.json()
-    }
-
-    const projects = ref([])
-    // Fetch projects
-    /*
-    async function fetchProjects() {
-      const projectEndpoint = "/projects/latest"
-      const projectUrl = `${import.meta.env.VITE_API_URL}${projectEndpoint}`
-
-      const projectResponse = await fetch(projectUrl)
-      projects.value = await projectResponse.json()
-    }
-    */
-
-    onBeforeMount(async () => {
-      await fetchEducations()
-      projects.value = projectStore.getProjects
+    const educations = computed(() => {
+      return educationStore.getEducations
     })
 
     const getResume = computed(() => {
@@ -162,6 +151,6 @@ export default {
   opacity: 0;
 }
 .fade-enter-active {
-  transition: opacity 1s ease;
+  transition: opacity 1.5s ease;
 }
 </style>

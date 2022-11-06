@@ -4,11 +4,15 @@
 </template>
 
 <script>
-import { useHead } from "@vueuse/head"
-import { onBeforeMount } from "vue"
 import NavBar from "./components/NavBar.vue"
 
+import { onBeforeMount } from "vue"
+
+import { useHead } from "@vueuse/head"
+
 import { useProjectStore } from "./stores/projects"
+import { useEducationStore } from "./stores/educations"
+
 export default {
   components: {
     NavBar,
@@ -32,11 +36,12 @@ export default {
       ],
     })
 
-    // Call api
     const projectStore = useProjectStore()
+    const educationStore = useEducationStore()
 
-    onBeforeMount(() => {
-      projectStore.fetchProjects()
+    onBeforeMount(async () => {
+      await projectStore.fetchProjects()
+      await educationStore.fetchEducations()
     })
   },
 }

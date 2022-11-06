@@ -61,9 +61,6 @@ export default {
     const profesionalExperiences = ref([])
     const voluntaryExperiences = ref([])
 
-    const profesionalExperienceEndpoint = "/experiences/profesional"
-    const voluntaryExperienceEndpoint = "/experiences/voluntary"
-
     async function fetchExperiences(endpoint) {
       const experienceUrl = `${import.meta.env.VITE_API_URL}${endpoint}`
 
