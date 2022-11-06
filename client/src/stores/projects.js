@@ -17,9 +17,8 @@ export const useProjectStore = defineStore("project", {
       try {
         const projectResponse = await fetch(projectUrl)
         this.projects = await projectResponse.json()
-        console.log("Making an api call for projects")
       } catch (error) {
-        console.log("Couldn’t fetch projects...")
+        console.log("An error occured, please contact administrator")
       }
     },
   },

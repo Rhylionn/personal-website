@@ -41,38 +41,37 @@
           /></a>
         </div>
       </header>
-      <WaitingLoader v-if="projects.length == 0" />
-      <section v-else>
-        <section id="myWork">
-          <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
-            <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />{{
-              $t("myWork.heading")
-            }}
-          </h2>
-          <div class="flex flex-col">
-            <ProjectOverview
-              v-for="(project, index) in projects"
-              :key="index"
-              :project="project"
-              :lang="$i18n.locale"
-            />
-          </div>
-        </section>
-        <section id="education">
-          <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
-            <FontAwesomeIcon icon="route" size="xs" class="mr-4" />{{
-              $t("education.heading")
-            }}
-          </h2>
-          <div>
-            <EducationOverview
-              v-for="(education, index) in educations"
-              :key="index"
-              :education="education"
-              :lang="$i18n.locale"
-            />
-          </div>
-        </section>
+      <section id="myWork">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+          <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />{{
+            $t("myWork.heading")
+          }}
+        </h2>
+        <WaitingLoader v-if="projects.length == 0" />
+        <div v-else class="flex flex-col">
+          <ProjectOverview
+            v-for="(project, index) in projects"
+            :key="index"
+            :project="project"
+            :lang="$i18n.locale"
+          />
+        </div>
+      </section>
+      <section id="education">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+          <FontAwesomeIcon icon="route" size="xs" class="mr-4" />{{
+            $t("education.heading")
+          }}
+        </h2>
+        <WaitingLoader v-if="educations.length == 0" />
+        <div v-else>
+          <EducationOverview
+            v-for="(education, index) in educations"
+            :key="index"
+            :education="education"
+            :lang="$i18n.locale"
+          />
+        </div>
       </section>
 
       <section id="technologies">

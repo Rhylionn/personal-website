@@ -17,9 +17,8 @@ export const useEducationStore = defineStore("education", {
       try {
         const educationResponse = await fetch(educationUrl)
         this.educations = await educationResponse.json()
-        console.log("Making api call for educations")
       } catch (error) {
-        console.log("Couldn’t fetch educations")
+        alert("An error occured, please contact administrator")
       }
     },
   },

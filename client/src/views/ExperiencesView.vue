@@ -1,13 +1,14 @@
 <template>
   <Transition name="fade" appear>
-    <main class="w-11/12 md:w-1/2 xl:w-1/3 mx-auto my-8">
+    <main class="w-11/12 md:w-1/2 xl:w-1/3 mx-auto my-8 min-h-screen">
       <section id="profesional">
         <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon icon="fa-user-tie" size="xs" class="mr-4" />{{
             $t("profesional.heading")
           }}
         </h2>
-        <div>
+        <WaitingLoader v-if="profesionalExperiences.length == 0" />
+        <div v-else>
           <ExperienceOverview
             v-for="(experience, index) in profesionalExperiences"
             :key="index"
@@ -22,7 +23,8 @@
             $t("voluntary.heading")
           }}
         </h2>
-        <div>
+        <WaitingLoader v-if="voluntaryExperiences.length == 0" />
+        <div v-else>
           <ExperienceOverview
             v-for="(experience, index) in voluntaryExperiences"
             :key="index"
@@ -37,49 +39,33 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
-import { useI18n } from "vue-i18n"
+import { computed } from "vue"
 import ExperienceOverview from "../components/ExperienceOverview.vue"
 import FooterInformations from "../components/FooterInformations.vue"
 
-import { useProjectStore } from "../stores/projects"
+import WaitingLoader from "../components/WaitingLoader.vue"
+
+import { useExperienceStore } from "../stores/experiences"
 
 export default {
   name: "ExperiencesView",
   components: {
     FooterInformations,
     ExperienceOverview,
+    WaitingLoader,
   },
   setup() {
-    const { t } = useI18n({
-      inheritLocale: true,
+    const experienceStore = useExperienceStore()
+
+    const profesionalExperiences = computed(() => {
+      return experienceStore.getProfesionalExperiences
     })
 
-    const projectStore = useProjectStore()
-    console.log(projectStore.getProjects)
-
-    const profesionalExperiences = ref([])
-    const voluntaryExperiences = ref([])
-
-    async function fetchExperiences(endpoint) {
-      const experienceUrl = `${import.meta.env.VITE_API_URL}${endpoint}`
-
-      const experienceResponse = await fetch(experienceUrl)
-      return await experienceResponse.json()
-    }
-
-    onBeforeMount(async () => {
-      profesionalExperiences.value = await fetchExperiences(
-        profesionalExperienceEndpoint
-      )
-      voluntaryExperiences.value = await fetchExperiences(
-        voluntaryExperienceEndpoint
-      )
-
-      console.log("calling mongo")
+    const voluntaryExperiences = computed(() => {
+      return experienceStore.getVoluntaryExperiences
     })
 
-    return { t, profesionalExperiences, voluntaryExperiences }
+    return { profesionalExperiences, voluntaryExperiences }
   },
 }
 </script>
