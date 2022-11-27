@@ -1,16 +1,16 @@
-import { createApp } from "vue"
-import "./index.css"
-import router from "./router/index"
-import { createHead } from "@vueuse/head"
-import { createPinia } from "pinia"
+import { createApp } from "vue";
+import "./index.css";
+import router from "./router/index";
+import { createHead } from "@vueuse/head";
+import { createPinia } from "pinia";
 
-import App from "./App.vue"
+import App from "./App.vue";
 
-import messages from "@intlify/vite-plugin-vue-i18n/messages"
-import { createI18n } from "vue-i18n"
+import messages from "@intlify/vite-plugin-vue-i18n/messages";
+import { createI18n } from "vue-i18n";
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faMugHot,
   faFolderOpen,
@@ -19,15 +19,13 @@ import {
   faCodeMerge,
   faUserTie,
   faHandshakeAngle,
-} from "@fortawesome/free-solid-svg-icons"
+} from "@fortawesome/free-solid-svg-icons";
 
 import {
   faGithub,
   faBuffer,
   faFedora,
   faWindows,
-  faHtml5,
-  faCss3,
   faJsSquare,
   faNodeJs,
   faVuejs,
@@ -35,7 +33,9 @@ import {
   faJava,
   faPython,
   faRaspberryPi,
-} from "@fortawesome/free-brands-svg-icons"
+  faDocker,
+  faLinux,
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faMugHot,
@@ -49,32 +49,32 @@ library.add(
   faBuffer,
   faFedora,
   faWindows,
-  faHtml5,
-  faCss3,
   faJsSquare,
   faNodeJs,
   faVuejs,
   faPhp,
   faJava,
   faPython,
-  faRaspberryPi
-)
+  faRaspberryPi,
+  faDocker,
+  faLinux
+);
 
 const i18n = createI18n({
   locale: navigator.language.split("-")[0],
   fallbackLocale: import.meta.env.VITE_APP_I18N_FALLBACK_LOCALE,
   messages,
-})
+});
 
-const head = createHead()
-const pinia = createPinia()
+const head = createHead();
+const pinia = createPinia();
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.component("FontAwesomeIcon", FontAwesomeIcon)
+app.component("FontAwesomeIcon", FontAwesomeIcon);
 
-app.use(router)
-app.use(head)
-app.use(pinia)
-app.use(i18n)
-app.mount("#app")
+app.use(router);
+app.use(head);
+app.use(pinia);
+app.use(i18n);
+app.mount("#app");

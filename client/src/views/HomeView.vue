@@ -83,11 +83,11 @@
           />Technologies
         </h2>
         <div class="grid gap-1 grid-cols-2 sm:grid-cols-4">
+          <TechnologyUsed :icon="['fab', 'linux']" name="Linux" />
           <TechnologyUsed :icon="['fab', 'fedora']" name="Fedora" />
           <TechnologyUsed :icon="['fab', 'windows']" name="Windows" />
           <TechnologyUsed :icon="['fab', 'github']" name="Github" />
-          <TechnologyUsed :icon="['fab', 'html5']" name="HTML" />
-          <TechnologyUsed :icon="['fab', 'css3']" name="CSS" />
+          <TechnologyUsed :icon="['fab', 'docker']" name="Docker" />
           <TechnologyUsed :icon="['fab', 'js-square']" name="Javascript" />
           <TechnologyUsed :icon="['fab', 'node-js']" name="NodeJS" />
           <TechnologyUsed :icon="['fab', 'vuejs']" name="VueJS" />
@@ -103,17 +103,17 @@
 </template>
 
 <script>
-import { computed } from "vue"
+import { computed } from "vue";
 
-import { useProjectStore } from "../stores/projects"
-import { useEducationStore } from "../stores/educations"
+import { useProjectStore } from "../stores/projects";
+import { useEducationStore } from "../stores/educations";
 
-import FooterInformations from "../components/FooterInformations.vue"
-import ProjectOverview from "../components/ProjectOverview.vue"
-import EducationOverview from "../components/EducationOverview.vue"
-import TechnologyUsed from "../components/TechnologyUsed.vue"
+import FooterInformations from "../components/FooterInformations.vue";
+import ProjectOverview from "../components/ProjectOverview.vue";
+import EducationOverview from "../components/EducationOverview.vue";
+import TechnologyUsed from "../components/TechnologyUsed.vue";
 
-import WaitingLoader from "../components/WaitingLoader.vue"
+import WaitingLoader from "../components/WaitingLoader.vue";
 
 export default {
   name: "HomeView",
@@ -125,24 +125,24 @@ export default {
     WaitingLoader,
   },
   setup() {
-    const projectStore = useProjectStore()
-    const educationStore = useEducationStore()
+    const projectStore = useProjectStore();
+    const educationStore = useEducationStore();
 
     const projects = computed(() => {
-      return projectStore.getProjects
-    })
+      return projectStore.getProjects;
+    });
 
     const educations = computed(() => {
-      return educationStore.getEducations
-    })
+      return educationStore.getEducations;
+    });
 
     const getResume = computed(() => {
-      return new URL("../assets/cv-fr.pdf", import.meta.url).href
-    })
+      return new URL("../assets/cv-fr.pdf", import.meta.url).href;
+    });
 
-    return { educations, projects, getResume }
+    return { educations, projects, getResume };
   },
-}
+};
 </script>
 
 <style lang="postcss" scoped>
