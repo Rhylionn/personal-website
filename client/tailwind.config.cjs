@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        midnight: "#130F40",
+        midnight: {
+          200: "#3E2CAA",
+          600: "#052b50",
+          800: "#130F40",
+        },
         zinc: {
           900: "#18181b",
         },
@@ -13,7 +17,13 @@ module.exports = {
           900: "#0f172a",
         },
       },
+      maxWidth: {
+        "1/2": "50%",
+      },
+      minHeight: {
+        "4/5": "80%",
+      },
     },
   },
   plugins: [],
-}
+};

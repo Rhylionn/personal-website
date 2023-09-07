@@ -4,15 +4,15 @@
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue"
+import NavBar from "./components/NavBar.vue";
 
-import { onBeforeMount } from "vue"
+import { onBeforeMount } from "vue";
 
-import { useHead } from "@vueuse/head"
+import { useHead } from "@vueuse/head";
 
-import { useProjectStore } from "./stores/projects"
-import { useEducationStore } from "./stores/educations"
-import { useExperienceStore } from "./stores/experiences"
+import { useProjectStore } from "./stores/projects";
+import { useEducationStore } from "./stores/educations";
+import { useExperienceStore } from "./stores/experiences";
 
 export default {
   components: {
@@ -35,19 +35,19 @@ export default {
           content: "Thomas BERNARD",
         },
       ],
-    })
+    });
 
-    const projectStore = useProjectStore()
-    const educationStore = useEducationStore()
-    const experienceStore = useExperienceStore()
+    const projectStore = useProjectStore();
+    const educationStore = useEducationStore();
+    const experienceStore = useExperienceStore();
 
     onBeforeMount(async () => {
-      await projectStore.fetchProjects()
-      await educationStore.fetchEducations()
-      await experienceStore.fetchExperiences()
-    })
+      await projectStore.fetchProjects();
+      await educationStore.fetchEducations();
+      await experienceStore.fetchExperiences();
+    });
   },
-}
+};
 </script>
 
 <style lang="postcss">
@@ -56,7 +56,7 @@ html {
 }
 #app {
   @apply min-h-screen;
-  @apply bg-gradient-to-br from-black to-midnight bg-cover;
+  @apply bg-gradient-to-br from-midnight-200 to-midnight-800 to-70% bg-cover;
   @apply text-white font-sans;
   @apply py-5;
 }

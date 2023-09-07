@@ -5,6 +5,7 @@ const db = require("./core/database");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const https = require("https");
+const http = require("http");
 
 const fs = require("fs");
 dotenv.config();
@@ -14,12 +15,13 @@ const app = express();
 // Define static route
 app.use("/static", express.static(path.join(__dirname, "public")));
 
+/*
 app.use(
   helmet({
     crossOriginEmbedderPolicy: false,
   })
 );
-
+*/
 // Enable cors
 app.use(
   cors({
@@ -31,7 +33,8 @@ app.use("/educations", require("./routes/educations"));
 app.use("/projects", require("./routes/projects"));
 app.use("/experiences", require("./routes/experiences"));
 
-https
+/*
+const server = https
   .createServer(
     {
       key: fs.readFileSync("/etc/letsencrypt/live/thomasbd.site/privkey.pem"),
@@ -39,6 +42,8 @@ https
     },
     app
   )
-  .listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}`);
-  });
+  */
+
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
+});

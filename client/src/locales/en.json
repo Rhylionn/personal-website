@@ -11,7 +11,8 @@
     "experiences": "Experiences"
   },
   "header": {
-    "title": "Hi! Thomas's here!",
+    "title-hi": "Hi!",
+    "title-name": "Thomas's here!",
     "aboutme": "French student in engineering school in the cybersecurity field, I am a fervent defender of online privacy aiming for a more secure and private online world.",
     "dl-resume": "Download my resume"
   },

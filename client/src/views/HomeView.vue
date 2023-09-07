@@ -2,43 +2,57 @@
   <Transition name="fade" appear>
     <main class="w-11/12 sm:w-1/2 xl:w-1/3 mx-auto my-8">
       <header>
-        <h1 class="font-black text-5xl text-center sm:text-left">
-          {{ $t("header.title") }}
+        <h1
+          class="font-black text-3xl sm:text-5xl text-center sm:text-left sm:flex sm:items-center sm:gap-4"
+        >
+          {{ $t("header.title-hi") }}
+          <img
+            src="../assets/images/profile-picture.jpg"
+            alt="Profile picture"
+            class="w-20 h-20 rounded-full border-4 border-white mx-auto my-2 sm:mx-0 sm:my-0"
+          />
+          {{ $t("header.title-name") }}
           <FontAwesomeIcon icon="mug-hot" size="xs" class="ml-4" />
         </h1>
         <p class="mt-12 text-lg text-center sm:text-left">
           {{ $t("header.aboutme") }}
         </p>
-        <div class="my-8 flex justify-center sm:justify-start">
-          <a
-            class="bg-slate-900 py-3 px-4 rounded-md font-bold"
-            :href="getResume"
-            target="_blank"
-            rel="nofollow"
-            >{{ $t("header.dl-resume") }}</a
-          >
-        </div>
-        <div class="flex justify-center gap-4 sm:justify-start">
-          <a href="https://github.com/Rhylionn" target="_blank"
-            ><img class="h-8" src="../assets/images/github-icon.svg"
-          /></a>
-          <a href="#" target="_blank"
-            ><img class="h-8" src="../assets/images/htb-icon.svg"
-          /></a>
-          <a href="https://www.root-me.org/rhylionn" target="_blank"
-            ><img
-              class="h-8"
-              src="../assets/images/rootme-icon.svg"
-              alt="Rootme account"
-          /></a>
-          <a
-            href="https://www.linkedin.com/in/thomas-bernard-esaip/"
-            target="_blank"
-            ><img
-              class="h-8"
-              src="../assets/images/linkedin-icon.svg"
-              alt="LinkedIn account"
-          /></a>
+
+        <div
+          class="flex flex-col sm:flex-row gap-8 sm:justify-start items-center my-8"
+        >
+          <div class="flex gap-4">
+            <a href="https://github.com/Rhylionn" target="_blank"
+              ><img class="h-8" src="../assets/images/github-icon.svg"
+            /></a>
+            <a href="#" target="_blank"
+              ><img class="h-8" src="../assets/images/htb-icon.svg"
+            /></a>
+            <a href="https://www.root-me.org/rhylionn" target="_blank"
+              ><img
+                class="h-8"
+                src="../assets/images/rootme-icon.svg"
+                alt="Rootme account"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/thomas-bernard-esaip/"
+              target="_blank"
+              ><img
+                class="h-8"
+                src="../assets/images/linkedin-icon.svg"
+                alt="LinkedIn account"
+            /></a>
+          </div>
+
+          <div class="flex justify-center sm:justify-start">
+            <a
+              class="bg-slate-900 py-2 px-4 rounded-md font-bold"
+              :href="getResume"
+              target="_blank"
+              rel="nofollow"
+              >{{ $t("header.dl-resume") }}</a
+            >
+          </div>
         </div>
       </header>
       <section id="myWork">
@@ -48,7 +62,7 @@
           }}
         </h2>
         <WaitingLoader v-if="projects.length == 0" />
-        <div v-else class="flex flex-col">
+        <div v-else class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <ProjectOverview
             v-for="(project, index) in projects"
             :key="index"

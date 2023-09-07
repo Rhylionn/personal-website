@@ -11,7 +11,8 @@
     "experiences": "Experiences"
   },
   "header": {
-    "title": "Salut! Moi c'est Thomas",
+    "title-hi": "Salut!",
+    "title-name": "Moi c'est Thomas",
     "aboutme": "Etudiant français en école d'ingénieurs dans le domaine de la cybersécurité, fervant défenseur de la vie privé en ligne j'aspire a un monde plus privé et sécurisé.",
     "dl-resume": "Télécharger mon CV"
   },
