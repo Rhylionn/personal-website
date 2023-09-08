@@ -37,11 +37,13 @@
             <a
               href="https://www.linkedin.com/in/thomas-bernard-esaip/"
               target="_blank"
-              ><img
+            >
+              <img
                 class="h-8"
                 src="../assets/images/linkedin-icon.svg"
                 alt="LinkedIn account"
-            /></a>
+              />
+            </a>
           </div>
 
           <div class="flex justify-center sm:justify-start">
@@ -50,25 +52,35 @@
               :href="getResume"
               target="_blank"
               rel="nofollow"
-              >{{ $t("header.dl-resume") }}</a
             >
+              {{ $t("header.dl-resume") }}
+            </a>
           </div>
         </div>
       </header>
       <section id="myWork">
         <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
-          <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />{{
-            $t("myWork.heading")
-          }}
+          <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />
+          {{ $t("myWork.heading") }}
         </h2>
-        <WaitingLoader v-if="projects.length == 0" />
-        <div v-else class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <ProjectOverview
-            v-for="(project, index) in projects"
-            :key="index"
-            :project="project"
-            :lang="$i18n.locale"
-          />
+        <WaitingLoader v-if="visibleProjects.length === 0" />
+        <div v-else>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ProjectOverview
+              v-for="(project, index) in visibleProjects"
+              :key="index"
+              :project="project"
+              :lang="$i18n.locale"
+            />
+          </div>
+          <button
+            v-show="visibleProjects.length < projects.length"
+            class="block mx-auto my-4 opacity-75 hover:opacity-100"
+            @click="showMore"
+          >
+            {{ $t("myWork.showmore-btn") }}
+            <FontAwesomeIcon icon="fa-chevron-down" size="sm" class="mx-2" />
+          </button>
         </div>
       </section>
       <section id="education">
@@ -117,7 +129,7 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, onBeforeMount, ref, watch } from "vue";
 
 import { useProjectStore } from "../stores/projects";
 import { useEducationStore } from "../stores/educations";
@@ -142,19 +154,34 @@ export default {
     const projectStore = useProjectStore();
     const educationStore = useEducationStore();
 
-    const projects = computed(() => {
-      return projectStore.getProjects;
+    const maxProject = ref(4);
+    const projects = ref([]);
+    const visibleProjects = ref([]);
+
+    onBeforeMount(async () => {
+      projects.value = (await projectStore.getProjects()).value;
+      visibleProjects.value = projects.value.slice(0, maxProject.value);
+    });
+
+    function showMore() {
+      if (maxProject.value <= projects.value.length) {
+        maxProject.value += 4;
+      }
+    }
+
+    watch(maxProject, () => {
+      visibleProjects.value = projects.value.slice(0, maxProject.value);
     });
 
     const educations = computed(() => {
-      return educationStore.getEducations;
+      return educationStore.getEducations();
     });
 
     const getResume = computed(() => {
       return new URL("../assets/cv-fr.pdf", import.meta.url).href;
     });
 
-    return { educations, projects, getResume };
+    return { educations, showMore, getResume, projects, visibleProjects };
   },
 };
 </script>

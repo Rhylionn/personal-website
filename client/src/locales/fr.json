@@ -17,7 +17,8 @@
     "dl-resume": "Télécharger mon CV"
   },
   "myWork": {
-    "heading": "Mes projets"
+    "heading": "Mes projets",
+    "showmore-btn": "Afficher plus"
   },
   "education": {
     "heading": "Mes formations"

@@ -10,7 +10,6 @@ import { onBeforeMount } from "vue";
 
 import { useHead } from "@vueuse/head";
 
-import { useProjectStore } from "./stores/projects";
 import { useEducationStore } from "./stores/educations";
 import { useExperienceStore } from "./stores/experiences";
 
@@ -37,12 +36,10 @@ export default {
       ],
     });
 
-    const projectStore = useProjectStore();
     const educationStore = useEducationStore();
     const experienceStore = useExperienceStore();
 
     onBeforeMount(async () => {
-      await projectStore.fetchProjects();
       await educationStore.fetchEducations();
       await experienceStore.fetchExperiences();
     });

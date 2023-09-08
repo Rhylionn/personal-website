@@ -39,13 +39,13 @@
 </template>
 
 <script>
-import { computed } from "vue"
-import ExperienceOverview from "../components/ExperienceOverview.vue"
-import FooterInformations from "../components/FooterInformations.vue"
+import { computed } from "vue";
+import ExperienceOverview from "../components/ExperienceOverview.vue";
+import FooterInformations from "../components/FooterInformations.vue";
 
-import WaitingLoader from "../components/WaitingLoader.vue"
+import WaitingLoader from "../components/WaitingLoader.vue";
 
-import { useExperienceStore } from "../stores/experiences"
+import { useExperienceStore } from "../stores/experiences";
 
 export default {
   name: "ExperiencesView",
@@ -55,19 +55,19 @@ export default {
     WaitingLoader,
   },
   setup() {
-    const experienceStore = useExperienceStore()
+    const experienceStore = useExperienceStore();
 
     const profesionalExperiences = computed(() => {
-      return experienceStore.getProfesionalExperiences
-    })
+      return experienceStore.getProfesionalExperiences();
+    });
 
     const voluntaryExperiences = computed(() => {
-      return experienceStore.getVoluntaryExperiences
-    })
+      return experienceStore.getVoluntaryExperiences();
+    });
 
-    return { profesionalExperiences, voluntaryExperiences }
+    return { profesionalExperiences, voluntaryExperiences };
   },
-}
+};
 </script>
 
 <style lang="postcss" scoped>
