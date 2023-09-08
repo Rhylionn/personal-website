@@ -1,25 +1,27 @@
-import { defineStore } from "pinia"
+import { ref } from "vue";
+import { defineStore } from "pinia";
 
-export const useProjectStore = defineStore("project", {
-  state: () => ({
-    projects: [],
-  }),
-  getters: {
-    getProjects(state) {
-      return state.projects
-    },
-  },
-  actions: {
-    async fetchProjects() {
-      const projectEndpoint = "/projects/latest"
-      const projectUrl = `${import.meta.env.VITE_API_URL}${projectEndpoint}`
+export const useProjectStore = defineStore("project", () => {
+  const projects = ref([]);
 
-      try {
-        const projectResponse = await fetch(projectUrl)
-        this.projects = await projectResponse.json()
-      } catch (error) {
-        console.log("An error occured, please contact administrator")
-      }
-    },
-  },
-})
+  async function getProjects() {
+    if (projects.value.length == 0) {
+      await fetchProjects();
+    }
+    return projects;
+  }
+
+  async function fetchProjects() {
+    const projectEndpoint = "/projects/latest";
+    const projectUrl = `${import.meta.env.VITE_API_URL}${projectEndpoint}`;
+
+    try {
+      const projectResponse = await fetch(projectUrl);
+      projects.value = await projectResponse.json();
+    } catch (error) {
+      console.log("An error occured, please contact administrator");
+    }
+  }
+
+  return { getProjects, fetchProjects };
+});
