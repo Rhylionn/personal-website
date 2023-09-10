@@ -1,0 +1,65 @@
+db.projects.insertMany([
+  {
+    technologies: ["vuejs"],
+    repoLink: "https://github.com/Rhylionn/design4green",
+    creation_date: new ISODate("2022-11-17T00:00+01:00"),
+    en: {
+      title: "Design4Green 6th edition",
+      description: "Participation in the design4green competition edition 6. The site displays available trainings in a list and on a map. Arrived 2nd place in the contest."
+    },
+    fr: {
+      title: "Design4Green édition 6",
+      description: "Participation au concours design4green édition 6. Le site affiche des formations disponibles en liste et cartographié. Le site nous a valu la seconde place au concours."
+    }
+  },
+  {
+    technologies: ["java"],
+    repoLink: "https://github.com/Rhylionn/Citadelles",
+    creation_date: new ISODate("2021-08-29T00:00+01:00"),
+    en: {
+      title: "Citadelles",
+      description: "Project created for a school project. The goal was to create the Citadelles board game in Java with associated unit tests."
+    },
+    fr: {
+      title: "Citadelles",
+      description: "Projet créé dans le cadre d'un projet d’école. Le but était de créer le jeu de plateau Citadelles en Java avec les tests unitaires associées."
+    }
+  },
+  {
+    technologies: ["python"],
+    creation_date: new ISODate("2019-01-01T00:00+01:00"),
+    en: {
+      title: "Automations (bots et webscrapping)",
+      description: "Development of several bots to automate repetitive tasks using the Selenium or BeautifulSoup Python libraries."
+    },
+    fr: {
+      title: "Automatisations (bots et webscrapping)",
+      description: "Réalisation de plusieurs bots à des fins d'automatisations de tâches répétitives à l'aide des librairies Python Selenium ou BeautifulSoup."
+    }
+  },
+  {
+    technologies: ["php", "js-square", "html5", "css3"],
+    creation_date: new ISODate("2020-01-01T00:00+01:00"),
+    en: {
+      title: "Navigate security",
+      description: "Created a browser extension and a website allowing users to report malicious websites and obtain a safety score of the visited website."
+    },
+    fr: {
+      title: "Navigate security",
+      description: "Création d'un duo extension/site internet permettant aux utilisateurs de signaler des sites frauduleux et d'obtenir un score sur la sécurité du site visité."
+    }
+  },
+  {
+    technologies: ["html5", "css3", "vuejs"],
+    repoLink: "https://github.com/Rhylionn/personal-website",
+    creation_date: new ISODate("2022-01-01T00:00+01:00"),
+    en: {
+      title: "Personnal website",
+      description: "Personal website made with VueJS and TailwindCSS presenting myself, my skills, my projects, my training and my experience aswell."
+    },
+    fr: {
+      title: "Site personnel",
+      description: "Création de mon site personnel en VueJS et TailwindCSS ma présentant ainsi que mes compétences, mes projets, mes formations et mes expériences."
+    }
+  }
+])

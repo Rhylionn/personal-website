@@ -1,0 +1,41 @@
+{
+  "metas": {
+    "title": "Thomas BERNARD - Etudiant ingénieur en cybersécurité",
+    "description": "Thomas, étudiant ingénieur dans le domaine de la sécurité informatique.",
+    "keywords": "Cybersécurité, étudiant, esaip, ingénieur, informatique",
+    "author": "Thomas BERNARD"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "contact": "Contact",
+    "experiences": "Expériences"
+  },
+  "header": {
+    "title-hi": "Salut!",
+    "title-name": "Moi c'est Thomas",
+    "aboutme": "Étudiant certifié CEH en école d'ingénieurs dans le domaine de la cybersécurité, fervent défenseur de la vie privé en ligne, j'aspire à un monde plus privé et sécurisé.",
+    "dl-resume": "Télécharger mon CV"
+  },
+  "myWork": {
+    "heading": "Mes projets",
+    "showmore-btn": "Afficher plus"
+  },
+  "education": {
+    "heading": "Mes formations"
+  },
+  "technologies": {
+    "click-here": "Clique ici",
+    "environment": "pour voir mon environnement de tests d’intrusions/programmation."
+  },
+  "footer": {
+    "technology": "Fait avec"
+  },
+  "profesional": {
+    "heading": "Expériences professionnelles",
+    "date": "mois",
+    "tasks-made": "Tâches réalisées"
+  },
+  "voluntary": {
+    "heading": "Expérience bénévole"
+  }
+}

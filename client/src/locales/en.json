@@ -1,0 +1,41 @@
+{
+  "metas": {
+    "title": "Thomas Bernard - Engineering student in cybersecurity",
+    "description": "Thomas, engineering student in the cybersecurity field",
+    "keywords": "Cybersecurity, student, esaip, engineer, computer science",
+    "author": "Thomas Bernard"
+  },
+  "navigation": {
+    "home": "Home",
+    "contact": "Contact",
+    "experiences": "Experiences"
+  },
+  "header": {
+    "title-hi": "Hi!",
+    "title-name": "Thomas's here!",
+    "aboutme": "CEH certified student in engineering school in the cybersecurity field, I am a fervent defender of online privacy, aiming for a more secure and private online world.",
+    "dl-resume": "Download my resume"
+  },
+  "myWork": {
+    "heading": "My work",
+    "showmore-btn": "Show more"
+  },
+  "education": {
+    "heading": "Education"
+  },
+  "technologies": {
+    "click-here": "Click here",
+    "environment": "to see my pentesting/coding environment."
+  },
+  "footer": {
+    "technology": "Made with"
+  },
+  "profesional": {
+    "heading": "Professional experiences",
+    "date": "months",
+    "tasks-made": "Tasks given"
+  },
+  "voluntary": {
+    "heading": "Voluntary experiences"
+  }
+}
