@@ -2,18 +2,18 @@
   "metas": {
     "title": "Thomas BERNARD - Etudiant ingénieur en cybersécurité",
     "description": "Thomas, étudiant ingénieur dans le domaine de la sécurité informatique.",
-    "keywords": "Cybersécurité, étudiant, esiap, ingénieur, informatique",
+    "keywords": "Cybersécurité, étudiant, esaip, ingénieur, informatique",
     "author": "Thomas BERNARD"
   },
   "navigation": {
     "home": "Accueil",
     "contact": "Contact",
-    "experiences": "Experiences"
+    "experiences": "Expériences"
   },
   "header": {
     "title-hi": "Salut!",
     "title-name": "Moi c'est Thomas",
-    "aboutme": "Etudiant français en école d'ingénieurs dans le domaine de la cybersécurité, fervant défenseur de la vie privé en ligne j'aspire a un monde plus privé et sécurisé.",
+    "aboutme": "Étudiant certifié CEH en école d'ingénieurs dans le domaine de la cybersécurité, fervent défenseur de la vie privé en ligne, j'aspire à un monde plus privé et sécurisé.",
     "dl-resume": "Télécharger mon CV"
   },
   "myWork": {
@@ -23,23 +23,19 @@
   "education": {
     "heading": "Mes formations"
   },
+  "technologies": {
+    "click-here": "Clique ici",
+    "environment": "pour voir mon environnement de tests d’intrusions/programmation."
+  },
   "footer": {
     "technology": "Fait avec"
   },
   "profesional": {
-    "heading": "Experienecs profesionnelles",
+    "heading": "Expériences professionnelles",
     "date": "mois",
-    "tasksMade": "Taches réalisées"
+    "tasks-made": "Tâches réalisées"
   },
   "voluntary": {
-    "heading": "Experiences volontaires",
-    "title": "WEIS - Club d’accueil des étudiants internationaux",
-    "position": "Vice-président",
-    "description": "Vice-présidence du WEIS, club s’occupant du bon déroulement des étudiants internationaux de l’ESAIP. L’entraide et l’organisation sont de mises et m’ont permis de découvrir de nombreuses cultures et de développer mes compétences managériales.",
-    "tasks": [
-      "Intégration des étudiants internationaux",
-      "Création et mise en place d'évènements",
-      "Gestion d'équipe"
-    ]
+    "heading": "Expérience bénévole"
   }
 }

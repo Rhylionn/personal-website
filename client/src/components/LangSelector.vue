@@ -1,7 +1,7 @@
 <template>
   <button
     data-dropdown-toggle="dropdown"
-    class="px-4 py-2 rounded-md bg-zinc-900 text-white"
+    class="px-4 py-2 rounded-md bg-zinc-900 text-white hover:opacity-80"
     @click="$i18n.locale = $i18n.locale === 'en' ? 'fr' : 'en'"
   >
     <FontAwesomeIcon class="mr-3" icon="language" size="xl" />{{
@@ -13,5 +13,5 @@
 <script>
 export default {
   name: "LangSelector",
-}
+};
 </script>

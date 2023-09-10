@@ -23,39 +23,41 @@
         >
           <div class="flex gap-4">
             <a href="https://github.com/Rhylionn" target="_blank"
-              ><img class="h-8" src="../assets/images/github-icon.svg"
+              ><img
+                class="h-8 hover:opacity-80"
+                src="../assets/images/github-icon.svg"
             /></a>
-            <a href="#" target="_blank"
-              ><img class="h-8" src="../assets/images/htb-icon.svg"
+            <a href="https://app.hackthebox.com/profile/373475" target="_blank"
+              ><img
+                class="h-8 hover:opacity-80"
+                src="../assets/images/htb-icon.svg"
             /></a>
             <a href="https://www.root-me.org/rhylionn" target="_blank"
               ><img
-                class="h-8"
+                class="h-8 hover:opacity-80"
                 src="../assets/images/rootme-icon.svg"
                 alt="Rootme account"
             /></a>
             <a
-              href="https://www.linkedin.com/in/thomas-bernard-esaip/"
+              href="https://www.linkedin.com/in/thomas-bernard-infosec/"
               target="_blank"
             >
               <img
-                class="h-8"
+                class="h-8 hover:opacity-80"
                 src="../assets/images/linkedin-icon.svg"
                 alt="LinkedIn account"
               />
             </a>
           </div>
 
-          <div class="flex justify-center sm:justify-start">
-            <a
-              class="bg-slate-900 py-2 px-4 rounded-md font-bold"
-              :href="getResume"
-              target="_blank"
-              rel="nofollow"
-            >
-              {{ $t("header.dl-resume") }}
-            </a>
-          </div>
+          <a
+            class="bg-slate-900 py-2 px-4 rounded-md font-bold border-slate-800 border-2 hover:opacity-90"
+            :href="getResume"
+            target="_blank"
+            rel="nofollow"
+          >
+            {{ $t("header.dl-resume") }}
+          </a>
         </div>
       </header>
       <section id="myWork">
@@ -109,19 +111,17 @@
           />Technologies
         </h2>
         <div class="grid gap-1 grid-cols-2 sm:grid-cols-4">
-          <TechnologyUsed :icon="['fab', 'linux']" name="Linux" />
           <TechnologyUsed :icon="['fab', 'fedora']" name="Fedora" />
           <TechnologyUsed :icon="['fab', 'windows']" name="Windows" />
-          <TechnologyUsed :icon="['fab', 'github']" name="Github" />
-          <TechnologyUsed :icon="['fab', 'docker']" name="Docker" />
-          <TechnologyUsed :icon="['fab', 'js-square']" name="Javascript" />
-          <TechnologyUsed :icon="['fab', 'node-js']" name="NodeJS" />
-          <TechnologyUsed :icon="['fab', 'vuejs']" name="VueJS" />
-          <TechnologyUsed :icon="['fab', 'php']" name="PHP" />
-          <TechnologyUsed :icon="['fab', 'java']" name="Java" />
           <TechnologyUsed :icon="['fab', 'python']" name="Python" />
-          <TechnologyUsed :icon="['fab', 'raspberry-pi']" name="Raspberry" />
+          <TechnologyUsed :icon="['fab', 'docker']" name="Docker" />
         </div>
+        <p class="sm:text-left text-center">
+          <a href="https://github.com/Rhylionn/dotfiles" class="font-bold">{{
+            $t("technologies.click-here")
+          }}</a>
+          {{ $t("technologies.environment") }}
+        </p>
       </section>
     </main>
   </Transition>

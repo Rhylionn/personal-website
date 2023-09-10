@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import { ref, onBeforeMount } from "vue"
-import { useI18n } from "vue-i18n"
+import { ref, onBeforeMount } from "vue";
+import { useI18n } from "vue-i18n";
 
-import LangSelector from "./LangSelector.vue"
+import LangSelector from "./LangSelector.vue";
 export default {
   name: "FooterInformations",
   components: {
@@ -29,9 +29,9 @@ export default {
   setup() {
     const { t } = useI18n({
       inheritLocale: false,
-    })
+    });
 
-    let versionNumber = ref("")
+    let versionNumber = ref("");
 
     onBeforeMount(() => {
       fetch("https://api.github.com/repos/Rhylionn/personal-website/releases", {
@@ -40,10 +40,10 @@ export default {
         },
       })
         .then((response) => response.json())
-        .then((data) => (versionNumber.value = data[0].tag_name))
-    })
+        .then((data) => (versionNumber.value = data[0].tag_name));
+    });
 
-    return { t, versionNumber }
+    return { t, versionNumber };
   },
-}
+};
 </script>

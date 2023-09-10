@@ -17,7 +17,7 @@
 
     <div class="my-2">
       <h4 class="font-semibold text-md text-center md:text-left">
-        {{ $t("profesional.tasksMade") }}
+        {{ $t("profesional.tasks-made") }}
       </h4>
       <ul class="list-none md:list-disc text-center md:text-left ml-5 my-2">
         <li
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { ref, watch } from "vue"
+import { ref, watch } from "vue";
 
 export default {
   name: "ExperienceOverview",
@@ -41,32 +41,32 @@ export default {
     experience: {
       type: Object,
       default() {
-        return {}
+        return {};
       },
     },
     lang: {
       type: String,
       default() {
-        return "en"
+        return "en";
       },
     },
   },
 
   setup(props) {
-    const experienceYear = ref(new Date(props.experience.date).getFullYear())
+    const experienceYear = ref(new Date(props.experience.date).getFullYear());
 
     const displayedExperience = ref(
       props.lang === "en" ? props.experience.en : props.experience.fr
-    )
+    );
 
     watch(
       () => props.lang,
       () => {
         displayedExperience.value =
-          props.lang === "en" ? props.experience.en : props.experience.fr
+          props.lang === "en" ? props.experience.en : props.experience.fr;
       }
-    )
-    return { props, experienceYear, displayedExperience }
+    );
+    return { props, experienceYear, displayedExperience };
   },
-}
+};
 </script>

@@ -13,7 +13,7 @@
   "header": {
     "title-hi": "Hi!",
     "title-name": "Thomas's here!",
-    "aboutme": "French student in engineering school in the cybersecurity field, I am a fervent defender of online privacy aiming for a more secure and private online world.",
+    "aboutme": "CEH certified student in engineering school in the cybersecurity field, I am a fervent defender of online privacy, aiming for a more secure and private online world.",
     "dl-resume": "Download my resume"
   },
   "myWork": {
@@ -23,23 +23,19 @@
   "education": {
     "heading": "Education"
   },
+  "technologies": {
+    "click-here": "Click here",
+    "environment": "to see my pentesting/coding environment."
+  },
   "footer": {
     "technology": "Made with"
   },
   "profesional": {
-    "heading": "Profesional experiences",
+    "heading": "Professional experiences",
     "date": "months",
-    "tasksMade": "Tasks given"
+    "tasks-made": "Tasks given"
   },
   "voluntary": {
-    "heading": "Voluntary experiences",
-    "title": "WEIS - International Student Host Club",
-    "position": "Vice President",
-    "description": "Vice-presidency of WEIS, a club for international students at ESAIP. Mutual aid and organisation are essential and have enabled me to discover many cultures and to develop my managerial skills.",
-    "tasks": [
-      "Integration of international students",
-      "Creation and implementation of events",
-      "Team management"
-    ]
+    "heading": "Voluntary experiences"
   }
 }
