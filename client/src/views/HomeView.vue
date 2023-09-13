@@ -182,7 +182,6 @@ export default {
     });
 
     return { educations, showMore, getResume, projects, visibleProjects };
-
   },
 };
 </script>

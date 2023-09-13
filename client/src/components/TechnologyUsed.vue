@@ -12,15 +12,15 @@ export default {
     icon: {
       type: Array,
       default() {
-        return []
+        return [];
       },
     },
     name: {
       type: String,
       default() {
-        return ""
+        return "";
       },
     },
   },
-}
+};
 </script>

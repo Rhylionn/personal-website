@@ -9,7 +9,11 @@ import App from "./App.vue";
 import messages from "@intlify/vite-plugin-vue-i18n/messages";
 import { createI18n } from "vue-i18n";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { library, config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
+
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faMugHot,

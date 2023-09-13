@@ -3,13 +3,16 @@
     class="w-11/12 sm:w-1/2 xl:w-1/3 m-auto flex justify-between items-center bottom-0"
   >
     <div>
-      <a href="https://github.com/Rhylionn/personal-website/releases">
+      <a
+        href="https://github.com/Rhylionn/personal-website/releases"
+        class="flex items-center gap-2"
+      >
         <FontAwesomeIcon icon="code-merge" size="lg" />
         <span class="ml-2">{{ versionNumber }}</span>
       </a>
     </div>
     <LangSelector />
-    <p>
+    <p class="flex items-center gap-2">
       {{ $t("footer.technology") }}
       <FontAwesomeIcon :icon="['fab', 'vuejs']" size="xl" />
     </p>
