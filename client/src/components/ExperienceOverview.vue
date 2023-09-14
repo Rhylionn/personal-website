@@ -5,7 +5,7 @@
       <span class="mx-2 hidden md:inline">-</span>
       <p>{{ displayedExperience.subject }}</p>
     </div>
-    <p class="text-sm my-0 md:text-left text-center">
+    <p class="text-md my-0 md:text-left text-center">
       {{
         `${experienceYear} - ${experience.duration} ${$t("profesional.date")}`
       }}

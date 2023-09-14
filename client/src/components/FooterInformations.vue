@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-11/12 sm:w-1/2 xl:w-1/3 m-auto flex justify-between items-center bottom-0"
+    class="w-11/12 md:w-1/2 xl:w-1/3 m-auto flex justify-between items-center bottom-0"
   >
     <div>
       <a

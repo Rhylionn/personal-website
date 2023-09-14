@@ -1,25 +1,25 @@
 <template>
   <Transition name="fade" appear>
-    <main class="w-11/12 sm:w-1/2 xl:w-1/3 mx-auto my-8">
+    <main class="w-11/12 md:w-3/5 xl:w-3/5 2xl:w-1/2 3xl:w-1/3 mx-auto my-8">
       <header>
         <h1
-          class="font-black text-3xl sm:text-5xl text-center sm:text-left sm:flex sm:items-center sm:gap-4"
+          class="font-black text-3xl md:text-4xl lg:text-9/5xl text-center md:text-left md:flex md:items-center md:gap-4"
         >
           {{ $t("header.title-hi") }}
           <img
             src="../assets/images/profile-picture.jpg"
             alt="Profile picture"
-            class="w-20 h-20 rounded-full border-4 border-white mx-auto my-2 sm:mx-0 sm:my-0"
+            class="w-20 h-20 rounded-full border-4 border-white mx-auto my-2 md:mx-0 md:my-0"
           />
           {{ $t("header.title-name") }}
           <FontAwesomeIcon icon="mug-hot" size="xs" class="ml-4" />
         </h1>
-        <p class="mt-12 text-lg text-center sm:text-left">
+        <p class="mt-12 text-lg text-center md:text-left">
           {{ $t("header.aboutme") }}
         </p>
 
         <div
-          class="flex flex-col sm:flex-row gap-8 sm:justify-start items-center my-8"
+          class="flex flex-col md:flex-row gap-8 md:justify-start items-center my-8"
         >
           <div class="flex gap-4">
             <a href="https://github.com/Rhylionn" target="_blank"
@@ -61,13 +61,13 @@
         </div>
       </header>
       <section id="myWork">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon icon="folder-open" size="xs" class="mr-4" />
           {{ $t("myWork.heading") }}
         </h2>
         <WaitingLoader v-if="visibleProjects.length === 0" />
         <div v-else>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ProjectOverview
               v-for="(project, index) in visibleProjects"
               :key="index"
@@ -81,12 +81,12 @@
             @click="showMore"
           >
             {{ $t("myWork.showmore-btn") }}
-            <FontAwesomeIcon icon="fa-chevron-down" size="sm" class="mx-2" />
+            <FontAwesomeIcon icon="fa-chevron-down" size="md" class="mx-2" />
           </button>
         </div>
       </section>
       <section id="education">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon icon="route" size="xs" class="mr-4" />{{
             $t("education.heading")
           }}
@@ -103,20 +103,20 @@
       </section>
 
       <section id="technologies">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon
             :icon="['fab', 'buffer']"
             size="xs"
             class="mr-4"
           />Technologies
         </h2>
-        <div class="grid gap-1 grid-cols-2 sm:grid-cols-4">
+        <div class="grid gap-1 grid-cols-2 md:grid-cols-4">
           <TechnologyUsed :icon="['fab', 'fedora']" name="Fedora" />
           <TechnologyUsed :icon="['fab', 'windows']" name="Windows" />
           <TechnologyUsed :icon="['fab', 'python']" name="Python" />
           <TechnologyUsed :icon="['fab', 'docker']" name="Docker" />
         </div>
-        <p class="sm:text-left text-center">
+        <p class="md:text-left text-center">
           <a href="https://github.com/Rhylionn/dotfiles" class="font-bold">{{
             $t("technologies.click-here")
           }}</a>

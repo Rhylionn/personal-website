@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import { computed } from "vue"
+import { computed } from "vue";
 
 export default {
   setup() {
     const getLoaderImage = computed(() => {
-      return new URL("../assets/bars-scale.svg", import.meta.url)
-    })
+      return new URL("../assets/bars-scale.svg", import.meta.url);
+    });
 
-    return { getLoaderImage }
+    return { getLoaderImage };
   },
-}
+};
 </script>

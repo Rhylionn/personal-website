@@ -22,6 +22,12 @@ module.exports = {
       minHeight: {
         "4/5": "80%",
       },
+      fontSize: {
+        "9/5xl": ["2.4375rem", "2.625rem"],
+      },
+      screens: {
+        "3xl": "2000px",
+      },
     },
   },
   plugins: [],

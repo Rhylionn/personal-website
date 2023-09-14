@@ -1,6 +1,8 @@
 <template>
   <Transition name="fade" appear>
-    <main class="w-11/12 md:w-1/2 xl:w-1/3 mx-auto my-8 min-h-screen">
+    <main
+      class="w-11/12 md:w-3/5 xl:w-3/5 2xl:w-1/2 3xl:w-1/3 mx-auto my-8 min-h-screen"
+    >
       <section id="profesional">
         <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon icon="fa-user-tie" size="xs" class="mr-4" />{{
@@ -18,7 +20,7 @@
         </div>
       </section>
       <section id="voluntary">
-        <h2 class="font-bold text-4xl mt-14 mb-8 text-center sm:text-left">
+        <h2 class="font-bold text-4xl mt-14 mb-8 text-center md:text-left">
           <FontAwesomeIcon icon="fa-handshake-angle" size="xs" class="mr-4" />{{
             $t("voluntary.heading")
           }}
