@@ -15,13 +15,13 @@ const app = express();
 // Define static route
 app.use("/static", express.static(path.join(__dirname, "public")));
 
-/*
-app.use(
-  helmet({
-    crossOriginEmbedderPolicy: false,
-  })
-);
-*/
+let options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/thomasbd.com/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/thomasbd.com/cert.pem"),
+};
+
+app.use(helmet());
+
 // Enable cors
 app.use(
   cors({
@@ -33,17 +33,4 @@ app.use("/educations", require("./routes/educations"));
 app.use("/projects", require("./routes/projects"));
 app.use("/experiences", require("./routes/experiences"));
 
-/*
-const server = https
-  .createServer(
-    {
-      key: fs.readFileSync("/etc/letsencrypt/live/thomasbd.site/privkey.pem"),
-      cert: fs.readFileSync("/etc/letsencrypt/live/thomasbd.site/cert.pem"),
-    },
-    app
-  )
-  */
-
-app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}`);
-});
+https.createServer(options, app).listen(process.env.PORT);
