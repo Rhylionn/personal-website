@@ -1,0 +1,53 @@
+version: "3.1"
+services:
+  website-client:
+    image: rhylionn/website-client
+    container_name: website-client
+    hostname: website-client
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./data/certbot/www/:/var/www/certbot/:ro
+      - ./data/certbot/conf/:/etc/letsencrypt/:ro
+    networks:
+      - website-network
+
+  website-server:
+    image: rhylionn/website-server
+    container_name: website-server
+    hostname: website-server
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./data/certbot/conf/:/etc/letsencrypt/:ro
+    networks:
+      - website-network
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    hostname: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db/:/data/db
+    networks:
+      - website-network
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: certbot
+    volumes:
+      - ./data/certbot/www/:/var/www/certbot/:rw
+      - ./data/certbot/conf/:/etc/letsencrypt/:rw
+
+networks:
+  website-network:
+    name: website-network
+    driver: bridge

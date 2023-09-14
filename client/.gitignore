@@ -25,8 +25,4 @@ dist-ssr
 
 # Docker
 
-Dockerfile
-
-
-config
 .env.dev
