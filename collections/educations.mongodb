@@ -1,27 +1,51 @@
 db.educations.insertMany([
   {
     img: "esaip-logo.svg",
-    date: new ISODate("2022-08-29T00:00+01:00"),
+    date: new ISODate("2024-01-01T00:00+01:00"),
     en: {
       title: "ESAIP, Engineering school",
-      description: "Engineering school in networks and computer science, focusing in the cybersecurity field.",
+      description: "Computer and network engineering school specializing in cybersecurity",
       courseWork: [
-        "Web developement",
-        "Relational databases",
-        "Java project developement",
+        "Ethical hacking",
+        "Windows/Linux administration",
+        "Cryptography",
         "Networking",
         "Project management"
       ]
     },
     fr: {
       title: "ESAIP, Ecole d'ingénieurs",
-      description: "Ecole d'ingénieurs en informatique et réseaux spécialisant en cybersécurité",
+      description: "École d'ingénieurs en informatique et réseaux spécialisant en cybersécurité",
       courseWork: [
-        "Développement web",
-        "Bases de données relationnelles",
-        "Projet de développement java",
-        "Réseaux",
+        "Piratage éthique",
+        "Administration Windows/Linux",
+        "Cryptographie",
+        "Réseau",
         "Gestion de projet"
+      ]
+    }
+  },
+  {
+    img: "uva-logo.svg",
+    date: new ISODate("2023-09-04T00:00+01:00"),
+    en: {
+      title: "UVa - University of Valladolid",
+      description: "5-month ERASMUS program in Spain. Courses in networks, administration and cybersecurity.",
+      courseWork: [
+        "Operating systems administration",
+        "Network and service architecture",
+        "Digital forensic",
+        "Network and systems security"
+      ]
+    },
+    fr: {
+      title: "UVa - Universidad De Valladolid",
+      description: "Programme ERASMUS de 5 mois en Espagne. Cours réseaux, administration, et cybersécurité.",
+      courseWork: [
+        "Administration des systèmes d’exploitation",
+        "Architecture des réseaux et services",
+        "Investigation informatique",
+        "Sécurité des réseaux et des systèmes"
       ]
     }
   },
@@ -32,8 +56,8 @@ db.educations.insertMany([
       title: "VIA University College",
       description: "5 month ERAMUS in Denmark, following the Software Engineering program",
       courseWork: [
-        "Android developement",
-        "Reponsive web design",
+        "Android development",
+        "Responsive web design",
         "NoSQL databases",
         "Web engineering processes",
         "Business Intelligence"
@@ -41,13 +65,13 @@ db.educations.insertMany([
     },
     fr: {
       title: "VIA University College",
-      description: "Programme ERASMUS sur 5 mois au Danemark, suivi de cours d'ingénérie logicielle",
+      description: "Programme ERASMUS sur 5 mois au Danemark, suivi de cours d'ingénierie logicielle",
       courseWork: [
         "Développement Android",
         "Développement web adaptatif",
         "Bases de données NoSQL",
-        "Processus d'ingénérie web",
-        "Business Intelligence"
+        "Processus d'ingénierie web",
+        "Informatique décisionnelle"
       ]
     }
   }

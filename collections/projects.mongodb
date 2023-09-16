@@ -1,65 +1,102 @@
 db.projects.insertMany([
   {
-    technologies: ["vuejs"],
+    technologies: ["fa-ethernet"],
+    creation_date: new ISODate("2023-04-10T00:00+01:00"),
+    en: {
+      title: "Activ’Esaip",
+      description: "Setting up an industrial information system with the Airbus Cyberrange to train professionals on the dangers, challenges and possible remedies of industrial cyberattacks."
+    },
+    fr: {
+      title: "Activ’Esaip",
+      description: "Mise en place un système d’information industriel avec le Cyberrange d’Airbus à des fins de formations aux professionnels sur les dangers, enjeux et remédiations possibles des cyberattaques industrielles."
+    }
+  },
+  {
+    technologies: [['fab', 'python']],
+    repoLink: "https://github.com/Rhylionn/steamint",
+    creation_date: new ISODate("2023-02-21T00:00+01:00"),
+    en: {
+      title: "Steamint",
+      description: "Developed an open-source intelligence tool in Python for Steam profiles. Retrieve multiple pieces of information from a public Steam profile."
+    },
+    fr: {
+      title: "Steamint",
+      description: "Réalisation d’un outil de renseignement en source ouverte en Python, portant sur les profils Steam. Récupération de multiples informations sur un profil Steam public."
+    }
+  },
+  {
+    technologies: ["fa-ethernet", ['fab', 'docker']],
+    creation_date: new ISODate("2022-11-10T00:00+01:00"),
+    en: {
+      title: "Home automation",
+      description: "Complete home automation using RaspberryPI and Docker. The project involves multiple wireless protocols (Zigbee, Bluetooth...). Daily backup system with rsync and supervision with Grafana."
+    },
+    fr: {
+      title: "Automatisation de maison",
+      description: "Automatisation complète de maison à l’aide d’un RaspberryPI et Docker. Le projet implique de multiples protocoles sans fils (Zigbee, Zwave,...). Système de backup journalier avec rsync et supervision avec Grafana."
+    }
+  },
+  {
+    technologies: [['fab',"vuejs"]],
     repoLink: "https://github.com/Rhylionn/design4green",
     creation_date: new ISODate("2022-11-17T00:00+01:00"),
     en: {
       title: "Design4Green 6th edition",
-      description: "Participation in the design4green competition edition 6. The site displays available trainings in a list and on a map. Arrived 2nd place in the contest."
+      description: "Participated in the Design4Green competition, edition 6. By respecting eco-design and accessibility criteria, the site displays a list of training courses on an interactive map. Finished 2nd."
     },
     fr: {
       title: "Design4Green édition 6",
-      description: "Participation au concours design4green édition 6. Le site affiche des formations disponibles en liste et cartographié. Le site nous a valu la seconde place au concours."
+      description: "Participation au concours Design4Green édition 6. En respectant des critères d’écoconception et d’accessibilité, le site affiche une liste de formations sur une carte interactive. Arrivé 2e."
     }
   },
   {
-    technologies: ["java"],
+    technologies: [['fab', "java"]],
     repoLink: "https://github.com/Rhylionn/Citadelles",
     creation_date: new ISODate("2021-08-29T00:00+01:00"),
     en: {
       title: "Citadelles",
-      description: "Project created for a school project. The goal was to create the Citadelles board game in Java with associated unit tests."
+      description: "School project aiming to create a console version of the Citadelles board game using Java. Implementation of several unit tests."
     },
     fr: {
       title: "Citadelles",
-      description: "Projet créé dans le cadre d'un projet d’école. Le but était de créer le jeu de plateau Citadelles en Java avec les tests unitaires associées."
+      description: "Projet d’école visant à recréer le jeu de plateau Citadelles en version console en utilisant Java. Mise en place de plusieurs tests unitaires."
     }
   },
   {
-    technologies: ["python"],
+    technologies: [['fab',"python"]],
     creation_date: new ISODate("2019-01-01T00:00+01:00"),
     en: {
-      title: "Automations (bots et webscrapping)",
-      description: "Development of several bots to automate repetitive tasks using the Selenium or BeautifulSoup Python libraries."
+      title: "Bots",
+      description: "Creation of various bots to automate repetitive tasks. Developed in python using Selenium or BeautifulSoup libraries."
     },
     fr: {
-      title: "Automatisations (bots et webscrapping)",
-      description: "Réalisation de plusieurs bots à des fins d'automatisations de tâches répétitives à l'aide des librairies Python Selenium ou BeautifulSoup."
+      title: "Bots",
+      description: "Réalisation de plusieurs bots à des fins d'automatisations de tâches répétitives. Développé en python à l'aide des librairies Selenium ou BeautifulSoup."
     }
   },
   {
-    technologies: ["php", "js-square", "html5", "css3"],
+    technologies: [['fab', "php"], ['fab', "js-square"]],
     creation_date: new ISODate("2020-01-01T00:00+01:00"),
     en: {
       title: "Navigate security",
-      description: "Created a browser extension and a website allowing users to report malicious websites and obtain a safety score of the visited website."
+      description: "Development of a website and web extension enabling users to report malicious websites. The extension provides a security score based on several criteria."
     },
     fr: {
       title: "Navigate security",
-      description: "Création d'un duo extension/site internet permettant aux utilisateurs de signaler des sites frauduleux et d'obtenir un score sur la sécurité du site visité."
+      description: "Développement d’un site et extension web permettant aux utilisateurs de signaler des sites malveillants. L’extension permet d’obtenir un score de sécurité basé sur plusieurs critères."
     }
   },
   {
-    technologies: ["html5", "css3", "vuejs"],
+    technologies: [['fab', "vuejs"], ['fab', "docker"]],
     repoLink: "https://github.com/Rhylionn/personal-website",
     creation_date: new ISODate("2022-01-01T00:00+01:00"),
     en: {
       title: "Personnal website",
-      description: "Personal website made with VueJS and TailwindCSS presenting myself, my skills, my projects, my training and my experience aswell."
+      description: "Creation of my personal website in VueJS and TailwindCSS, presenting myself, my skills, my projects, my training and my experience. Deployment on a VPS with Docker."
     },
     fr: {
       title: "Site personnel",
-      description: "Création de mon site personnel en VueJS et TailwindCSS ma présentant ainsi que mes compétences, mes projets, mes formations et mes expériences."
+      description: "Création de mon site personnel en VueJS et TailwindCSS me présentant ainsi que mes compétences, mes projets, mes formations et mes expériences. Déploiement sur VPS avec Docker."
     }
   }
 ])
