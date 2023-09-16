@@ -19,8 +19,6 @@ services:
     container_name: website-server
     hostname: website-server
     restart: always
-    ports:
-      - 3000:3000
     depends_on:
       - mongodb
     volumes:
@@ -33,8 +31,6 @@ services:
     container_name: mongodb
     hostname: mongodb
     restart: always
-    ports:
-      - 27017:27017
     volumes:
       - ./data/db/:/data/db
     networks:
