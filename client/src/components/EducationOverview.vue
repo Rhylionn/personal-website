@@ -1,19 +1,19 @@
 <template>
-  <div class="flex flex-col md:flex-row mb-10 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-[30%_70%] mb-10">
     <img
-      class="w-1/3 md:w-1/5 h-full mx-auto md:mr-12"
+      class="w-1/3 md:w-1/4 mb-12 lg:mb-0 lg:w-1/2 3xl:w-8/12 mx-auto h-full"
       :src="educationImage"
       :alt="`${displayedEducation.title} icon`"
     />
-    <div class="w-full md:w-4/5">
-      <h3 class="font-semibold text-center md:text-left mt-4 md:mt-0">
+    <div>
+      <h3 class="font-semibold text-center lg:text-left mt-4 lg:mt-0">
         {{ displayedEducation.title }}
       </h3>
-      <p class="my-2 text-center md:text-left">
+      <p class="my-2 text-center lg:text-left">
         {{ displayedEducation.description }}
       </p>
       <ul
-        class="list-none md:list-disc text-center md:text-left ml-0 md:ml-5 mt-4"
+        class="list-none lg:list-disc text-center lg:text-left ml-0 lg:ml-5 mt-4"
       >
         <li v-for="course in displayedEducation.courseWork" :key="course">
           {{ course }}

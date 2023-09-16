@@ -24,6 +24,7 @@ import {
   faUserTie,
   faHandshakeAngle,
   faChevronDown,
+  faEthernet,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -51,6 +52,7 @@ library.add(
   faUserTie,
   faHandshakeAngle,
   faChevronDown,
+  faEthernet,
   faGithub,
   faBuffer,
   faFedora,
