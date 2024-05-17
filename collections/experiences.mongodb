@@ -1,4 +1,28 @@
 db.experiences.insertMany([
+    {
+    voluntary: false,
+    name: "Liebherr Machines Bulle",
+    date: new ISODate("2024-03-01T00:00+01:00"),
+    duration: 6,
+    en: {
+      subject: "Young Talent - IT Security",
+      description: "End of studies internship in which I contributed to the IT security and compliance improvement within the company. I took part in projects aimed at analyzing and implementing security controls in line with international standards, while developing and implementing solutions to strengthen user account management and vulnerability checks.",
+      tasks: [
+        "Analysis of ISO 27001/27002 and CMMC controls to obtain certification.",
+        "Development and implementation of a solution for detecting and disabling non-compliant user accounts via PowerShell and Active Directory.",
+        "Implementation of Nessus for vulnerability scanning and compliance verification with CIS benchmarks."
+      ]
+    },
+    fr: {
+      subject: "Young Talent - IT Security",
+      description: "Stage de fin d’études dans lequel j’ai contribué à l'amélioration de la sécurité informatique et de la conformité au sein de l'entreprise. J'ai participé à des projets visant à analyser et mettre en œuvre des contrôles de sécurité selon les standards internationaux, tout en développant et en implémentant des solutions pour renforcer la gestion des comptes utilisateurs et les vérifications de vulnérabilités.",
+      tasks: [
+        "Analyse des contrôles ISO 27001/27002 et CMMC pour l'obtention d'une certification.",
+        "Développement et mise en œuvre d'une solution de détection et de désactivation des comptes utilisateurs non conformes via PowerShell et Active Directory.",
+        "Mise en œuvre de Nessus pour le scan de vulnérabilités et la vérification de conformité aux benchmarks CIS"
+      ]
+    }
+  },
   {
     voluntary: false,
     name: "Crédit Agricole",
@@ -58,8 +82,8 @@ db.experiences.insertMany([
       tasks: [
         "Recovery of the off-site backup and replication system with Veeam Backup & Replication and resolving the issue of massive data transfer over the network.",
         "Windows Server migration",
-        "Performed intrusion/load testing and discovered an XSS vulnerability.",
-        "Work with virtualization tools (VMware vSphere, ESXi, etc.)"
+        "Intrusion/load testing and discovery of high-impact web vulnerabilities.",
+        "Work with virtualization tools (VMware vSphere)"
       ]
     },
     fr: {
@@ -68,8 +92,8 @@ db.experiences.insertMany([
       tasks: [
         "Remise en état du système de sauvegarde et réplication hors-site avec Veeam Backup & Replication et résolution de la problématique du transfert massif de données par le réseau.",
         "Migration Windows Server",
-        "Réalisation de tests d’intrusions/tests de charge et découverte d'une vulnérabilité XSS.",
-        "Travail avec des outils de virtualisation (VMware vSphere, ESXi...)"
+        "Réalisation de tests d’intrusions/tests de charge et découverte de vulnérabilités web impactantes.",
+        "Travail avec des solutions de virtualisation (VMware vSphere)"
       ]
     }
   },
